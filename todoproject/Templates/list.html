@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<div class= "header-cont">
+{% if request.user.is_authenticated %}
+<h2>Hello {{request.user}}!!!</h2>
+<h3>You have <i>{{count}}</i> incomplete task{{count |pluralize:"s"}}</h3>
+<a href="{%url 'logout'%}">Log out</a>
+{%else%}
+<a href="{%url 'login-page'%}">Login</a>
+{% endif %}
+</div>
+<div class= " topp">
+<h1> Tasks list</h1>
+<form method = 'GET' class= "farm">
+    <input type= 'text' name='search-area' value= "{{search_input}}">
+    <input type= 'submit' value = 'Search'>
+
+</form>
+</div>
+<hr/>
+<table>
+    <tr> <th><a href="{%url 'home'%}">Create a Task</a></th></tr>
+    <tr>
+    {%for object in object_list%}
+    {% if object.complete%}
+    <td class= "cross-over">{{object.task}}</td>
+    {% else %}
+    <td class= "cross">{{object.task}}</td>
+    {% endif %}
+    <td>| {{object.details}} |</td>
+    <td><a href= "{%url 'details' object.id%}" class="view">view</a></td>
+    <td><a href= "{%url 'update' object.id%}" class= "update">update</a></td>
+    <td><a href= "{%url 'delete' object.id%}"><i class="material-icons" style="font-size:30px;color:red">close</i></a></td>
+    </tr>
+   
+    {%empty%}
+    <td>Nothing to show yet</td>
+    {%endfor%}
+</table>
+
+{% endblock content%}
+
+

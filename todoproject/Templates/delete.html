@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div class="header-cont">
+    <h1><a href = "{% url 'Task List'%}"> <i class="material-icons" style="font-size:30px;color:white">arrow_back</i></a>     Hello!!!</h1>
+    
+    </div>
+<div class="main-container">
+<form method="post">
+    
+   <p> Are you sure you want to delete <i> {{object}}</i></p>
+    <input type="submit" value="confirm">
+</form>
+</div>
+{% endblock content%}

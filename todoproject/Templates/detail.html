@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div class="header-cont">
+    <h1><a href = "{% url 'Task List'%}"> <i class="material-icons" style="font-size:30px;color:white">arrow_back</i></a>     Hello!!!</h1>
+    
+</div>
+<div class="main-container">
+<h1>{{object.task}}</h1>
+<p>{{object.details}}<p>
+</div>
+{% endblock content%}

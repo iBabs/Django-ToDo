@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div class= "header-cont">
+<h1> Login here</h1>
+</div>
+<div class= "main-container">
+
+<form method = "POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type ="submit" value="Login">
+    <p>Don't Have an account? <a href="{% url 'Signup-page'%}">Sing Up</a></p>
+</form>
+</div>
+{%endblock content%}

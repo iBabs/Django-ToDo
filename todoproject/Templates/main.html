@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Todo List</title>
+    <style>
+        body {
+
+            background-color: bisque;
+            font-family: 'Josefin Sans', sans-serif;
+            padding-top:50px;
+        }
+        .container {
+            width: 550px;
+            margin: auto;
+            background: white;
+            box-shadow: 5px 5px 8px -3px #716b6b;
+        }
+        .header-cont{
+            background: linear-gradient(102deg, #21768b 0%, #2b305e 50%, #020525 100%);
+            display:flex;
+            justify-content: space-between;
+            padding: 10px;
+            color: white;
+            border-radius:5px 5px 0 0;
+        }
+        .header-cont a{
+            color: white;
+            text-decoration: none;
+        }
+        .topp{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        a{
+            text-decoration: none;
+            color:#182f3e;
+        }
+        .cross-over{
+            color: green;
+            font-weight: 900;
+        }
+
+        table{
+            padding:5px;
+            cellpadding: 5;
+            cellmargin: 5px;
+        }
+        label{
+            display: block;
+        }
+
+        input[type=text], 
+        input[type=password]{
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 7px;
+            width: 90%;
+           
+        }
+        textarea{
+            border-radius: 5px;
+            border: 1px solid black;
+            width: 90%;
+        }
+        input[type=submit]{
+            cursor: pointer;
+            padding:5px;
+            background: linear-gradient(190deg, #1488cc 0%, #2b32b2 100%);
+            border: 1px solid;
+            border-radius: 2px;
+            font-size: 15px;
+            transition: background 1s, ease;
+        }
+        input[type=submit]:hover{
+            background: linear-gradient(55deg, #1488cc 0%, #2b32b2 100%);
+        }
+        .main-container{
+            padding:20px;
+        }
+        .farm{
+            display: flex;
+        }
+        .view{
+            background:#9bceeb;
+            padding:3px;
+            border:solid 1px;
+            border-radius:5px;  
+        }
+        .update{
+            background:#9bebcb;
+            padding:3px;
+            border:solid 1px;
+            border-radius:5px;   
+        }
+
+
+    </style>
+
+</head>
+
+    <body>
+        <main class="container">
+            {% block content %}
+
+            {% endblock content%}
+
+        </main>
+
+    </body>
+
+</html>
+
